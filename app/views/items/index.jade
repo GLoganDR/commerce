@@ -6,23 +6,39 @@ html
     link(rel='stylesheet', href='/css/style.css')
   body
     h1 eCommerce
+    h2 Items Table
     nav
       ul
         li: a(href='/') Home
         li: a(href='/about') About
         li: a(href='/faq') Faq
         li: a(href='/items/new') Add Items
-   
-   each item in items
-      ul
-        li= item.name
-        li= item.dimensions.l
-        li= item.dimensions.w
-        li= item.dimensions.h
-        li= item.weight
-        li= item.color
-        li= item.quantity
-        li= item.msrp
-        li= item.percentOff
-        li= item.cost()
+
+    table.table.table-hover.table-bordered
+      thead
+        tr
+          th Name
+          th Length
+          th Width
+          th Height
+          th Weight
+          th Color
+          th Quantity
+          th MSRP
+          th Percent Off
+          th Cost
+      tbody
+
+      each item in items
+        tr.item(style='background-color:#{item.color};')
+          td: a(href='/items/#{item._id}')= item.name
+          td #{item.dimensions.l}
+          td #{item.dimensions.w}
+          td #{item.dimensions.h}
+          td #{item.weight}
+          td #{item.color}
+          td #{item.quantity}
+          td #{item.msrp}
+          td #{item.percentOff}
+          td #{item.cost()}
 
