@@ -6,14 +6,14 @@ var Mongo = require('mongodb');
 function Item(o){
   this.name           = o.name;
   this.dimensions     = {};
-  this.dimensions.l   = o.dimensions.l * 1;
-  this.dimensions.w   = o.dimensions.w * 1;
-  this.dimensions.h   = o.dimensions.h * 1;
-  this.weight         = o.weight * 1;
+  this.dimensions.l   = parseFloat(o.dimensions.l);
+  this.dimensions.w   = parseFloat(o.dimensions.w);
+  this.dimensions.h   = parseFloat(o.dimensions.h);
+  this.weight         = parseFloat(o.weight);
   this.color          = o.color;
   this.quantity       = o.quantity * 1;
   this.msrp           = parseFloat(o.msrp);
-  this.percentOff     = parseFloat(o.percentOff * 1);
+  this.percentOff     = parseFloat(o.percentOff);
 }
 
 Object.defineProperty(Item, 'collection', {

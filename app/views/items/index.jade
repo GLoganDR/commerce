@@ -1,18 +1,8 @@
-doctype html
-html
-  head
-    meta(charset='utf-8')
-    title eCommerce
-    link(rel='stylesheet', href='/css/style.css')
-  body
-    h1 eCommerce
-    h2 Items Table
-    nav
-      ul
-        li: a(href='/') Home
-        li: a(href='/about') About
-        li: a(href='/faq') Faq
-        li: a(href='/items/new') Add Items
+extends ../shared/template
+//- adds the template for the links above the pages and the other data -//
+block content
+
+  h2 Items Page
 
     table.table.table-hover.table-bordered
       thead

@@ -43,7 +43,9 @@ html
               
     #delete
 
-      form(method='post', action='/items/#{item._id}/delete')
+      form(method='post', action='/items/#{item._id}')
+        //-this is the new input to delete. also removed "/delete" from item._id-//
+        input(type='hidden', name='_method', value='delete')
         button Delete Item
           
 

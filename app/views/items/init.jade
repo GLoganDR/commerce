@@ -1,26 +1,16 @@
-doctype html
-html
-  head
-    meta(charset='utf-8')
-    title eCommerce
-    link(rel='stylesheet', href='/css/style.css')
-  body
-    h1 eCommerce
-    nav
-      ul
-        li: a(href='/') Home
-        li: a(href='/about') About
-        li: a(href='/faq') Faq
-        li: a(href='/items') Items Page
-
+extends ../shared/template
+//- adds the template for the links above the pages and the other data -//
+block content
+  
+  h2 Add Item
     form(method='post', action='/items')
       input(name='name', type='text', placeholder='Item', autofocus=true)
-      input(name='dimensions[l]', type='number', placeholder='length')
-      input(name='dimensions[w]', type='number', placeholder='width')
-      input(name='dimensions[h]', type='number', placeholder='height')
-      input(name='weight', type='number', placeholder='weight')
+      input(name='dimensions[l]', placeholder='length')
+      input(name='dimensions[w]', placeholder='width')
+      input(name='dimensions[h]', placeholder='height')
+      input(name='weight', placeholder='weight')
       input(name='color', type='color', placeholder='color')
       input(name='quantity', type='number', placeholder='quantity')
-      input(name='msrp', type='number', placeholder='MSRP')
-      input(name='percentOff', type='number', placeholder='percentOff')
+      input(name='msrp', placeholder='MSRP')
+      input(name='percentOff', placeholder='percentOff')
       button Add Item to Database
