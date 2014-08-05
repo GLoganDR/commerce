@@ -10,42 +10,41 @@ html
     h2 Items Table
     nav
       ul
-        li: a(href='/') Home
-        li: a(href='/about') About
-        li: a(href='/faq') Faq
-        li: a(href='/items/new') Add Items
-        li: a(href='/items') Items Page
-     #item
-       form(method='post', action='/items/#{item._id}')
-         table.table.table-hover.table-bordered
-           thead
-             tr
-               th Name
-               th Length
-               th Width
-               th Height
-               th Weight
-               th Color
-               th Quantity
-               th MSRP
-               th Percent Off
-               th Cost
-           tbody
+          li: a(href='/') Home
+          li: a(href='/about') About
+          li: a(href='/faq') Faq
+          li: a(href='/items/new') Add Items
+          li: a(href='/items') Items Page
+          
+          table.table.table-hover.table-bordered
+            thead
+              tr
+                th Name
+                th Length
+                th Width
+                th Height
+                th Weight
+                th Quantity
+                th MSRP
+                th Percent Off
+                th Cost
+            tbody
 
-             tr.item(style='background-color:#FFDBAA;')
-               td: a(href='/items/#{item._id}')= item.name
-               td #{item.dimensions.l}
-               td #{item.dimensions.w}
-               td #{item.dimensions.h}
-               td #{item.weight}
-               td #{item.color}
-               td #{item.quantity}
-               td #{item.msrp}
-               td #{item.percentOff}
-               td #{item.cost()}
-        //- finally stumped  
-       form(method='post', action='/items/#{item._id}/delete')
-       button Delete Item
+              tr.item(style='background-color:#FFDBAA;')
+                td: a(href='/items/#{item._id}')= item.name
+                td #{item.dimensions.l}in
+                td #{item.dimensions.w}in
+                td #{item.dimensions.h}in
+                td #{item.weight}lbs
+                td #{item.quantity}
+                td $#{item.msrp.toFixed(2)}
+                td #{item.percentOff}%
+                td $#{item.cost().toFixed(2)}
+              
+    #delete
+
+      form(method='post', action='/items/#{item._id}/delete')
+        button Delete Item
           
 
 

@@ -26,7 +26,7 @@ li {
 
 a:link, a:visited {
     display: block;
-    width: 120px;
+    width: 100%;
     font-weight: bold;
     color: white;
     background-color: green;
@@ -41,35 +41,26 @@ a:hover, a:active {
 }
 
 table {
+    width: 100%;
     border-collapse: collapse;
 }
 
-table {
-    width: 100%;
-}
-
 th {
+    background-color: green;
+    color: #FFDBAA;
     height: 50px;
-}
-
-td {
-    text-align: right;
 }
 
 td {
     height: 50px;
     vertical-align: bottom;
-}
-
-td {
+    text-align: right;
     padding: 15px;
+    width: 100px;
+    color: white;
 }
 
 table, td, th {
     border: 1px solid green;
 }
 
-th {
-    background-color: green;
-    color: #FFDBAA;
-}
